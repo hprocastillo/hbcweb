@@ -1,0 +1,56 @@
+<div class="container">
+
+  <div class="row mt-5">
+    <div class="col-12 text-center">
+      <h2>Sistema de gestión HBC Logistic</h2>
+    </div>
+  </div>
+
+
+  <div class="row mt-5">
+    <div class="col-10 offset-1 col-lg-4 offset-lg-4">
+
+
+      <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+          <!-- EMAIL -->
+          <div class="form-group">
+            <label for="emailTXT">Correo electrónico:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailTXT"
+              formControlName="email"
+            >
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="form-group">
+            <label for="passwordTXT">Contraseña:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="passwordTXT"
+              formControlName="password"
+            >
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="row">
+            <div class="col">
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-block"
+              >
+                Iniciar sesión
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

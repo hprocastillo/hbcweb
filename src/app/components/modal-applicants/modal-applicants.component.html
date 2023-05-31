@@ -1,0 +1,130 @@
+<button type="button" class="btn btn-primary px-4 py-2 text-white" data-toggle="modal"
+        data-target="#modalApplicant">
+  Aplicar solicitud
+</button>
+
+
+<div class="modal fade" id="modalApplicant" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <form (ngSubmit)="onSubmit()" [formGroup]="applicantForm">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Registro</h5>
+          <button type="button" #closeButton class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <!-- FULL NAME OWNER -->
+          <div class="form-group">
+            <label for="nameOwnerTXT">Representante legal:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nameOwnerTXT"
+              formControlName="fullNameOwner"
+            >
+          </div>
+
+          <!-- EMAIL -->
+          <div class="form-group">
+            <label for="emailEnterpriseTXT">Correo electrónico:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="emailEnterpriseTXT"
+              formControlName="emailEnterprise"
+            >
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <!-- RUC -->
+              <div class="form-group">
+                <label for="rucTXT">Nº de RUC:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="rucTXT"
+                  formControlName="rucEnterprise"
+                >
+              </div>
+            </div>
+            <div class="col-6">
+              <!-- PHONE -->
+              <div class="form-group">
+                <label for="phoneTXT">Nº de Teléfono Fijo/Celular:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phoneTXT"
+                  formControlName="phoneEnterprise"
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <!-- TYPE UNIT CARRIER -->
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Tipo de transporte:</label>
+                <select
+                  class="form-control"
+                  id="exampleFormControlSelect1"
+                  formControlName="typeCarrier"
+                >
+                  <option>Seleccionar</option>
+                  <option>Station Vagon</option>
+                  <option>Van Suv</option>
+                  <option>Mini Camión</option>
+                  <option>Camión4</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <!-- NUMBER UNITS -->
+              <div class="form-group">
+                <label for="nNumberTruckTXT">Nº de unidades:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="nNumberTruckTXT"
+                  formControlName="numberCarrier"
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- DESCRIPTION ENTERPRISE -->
+          <div class="form-group">
+            <label for="descriptionTXT">Describe tu negocio:</label>
+            <textarea
+              class="form-control"
+              id="descriptionTXT"
+              rows="3"
+              formControlName="descriptionEnterprise"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal">
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="btn btn-primary">
+            Enviar registro
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

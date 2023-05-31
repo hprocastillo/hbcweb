@@ -1,0 +1,95 @@
+<app-navbar-system></app-navbar-system>
+<div class="container">
+
+  <!--------------- HOME TEMPLATE ------------------>
+  <ng-container *ngIf="template === 'homeTemplate'">
+    <div class="row mt-5">
+      <div class="col-6 col-lg-2">
+        <div class="card shadow p-3 mb-5 bg-white rounded text-center" (click)="showTemplate('contactsTemplate')">
+          <img class="m-auto" [src]="['./assets/images/system/messages.png']" alt="">
+          <p class="h5 mt-3">Contactos desde la web</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="card shadow p-3 mb-5 bg-white rounded text-center" (click)="showTemplate('applicantsTemplate')">
+          <img class="m-auto" [src]="['./assets/images/system/request.png']" alt="">
+          <p class="h5 mt-3">Solicitudes de afiliación</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!------------------------------------------------------->
+  <!------------------- CONTACTS TEMPLATE ----------------->
+  <ng-container *ngIf="template === 'contactsTemplate'">
+    <div class="row mt-2">
+      <div class="col-lg-12">
+        <div class="card shadow p-3 bg-white rounded">
+          <div class="row">
+            <div class="col-lg-8 d-flex justify-content-lg-start">
+              <button
+                type="button"
+                class="btn btn-secondary mr-3"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Volver a atrás"
+                (click)="showTemplate('homeTemplate')"
+              >
+                <i class="icon-arrow-left"></i>
+              </button>
+              <h4 class="mt-1">Contactos desde la web</h4>
+            </div>
+            <div class="col-lg-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-12">
+        <div class="card shadow p-3 bg-white rounded">
+          <app-contacts-system></app-contacts-system>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!------------------------------------------------------->
+  <!----------------- APPLICANTS TEMPLATE ----------------->
+  <ng-container *ngIf="template === 'applicantsTemplate'">
+    <div class="row mt-2">
+      <div class="col-lg-12">
+        <div class="card shadow p-3 bg-white rounded">
+          <div class="row">
+            <div class="col-lg-8 d-flex justify-content-lg-start">
+              <button
+                type="button"
+                class="btn btn-secondary mr-3"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Volver a atrás"
+                (click)="showTemplate('homeTemplate')"
+              >
+                <i class="icon-arrow-left"></i>
+              </button>
+              <h4 class="mt-1">Solicitudes de afiliación</h4>
+            </div>
+            <div class="col-lg-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-12">
+        <div class="card shadow p-3 bg-white rounded">
+          <app-applicants-system></app-applicants-system>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+
+</div>

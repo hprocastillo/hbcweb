@@ -1,0 +1,24 @@
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+    <tr class="text-nowrap">
+      <th scope="col">#</th>
+      <th scope="col">Fecha de envío</th>
+      <th scope="col">Nombres y Apellidos</th>
+      <th scope="col">Correo Electrónico</th>
+      <th scope="col">Asunto</th>
+      <th scope="col">Mensaje</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="text-nowrap" *ngFor="let contact of listContacts; let i=index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{contact.createdAt.toMillis() | date:'fullDate'}}</td>
+      <td>{{contact.fullName}}</td>
+      <td>{{contact.email}}</td>
+      <td>{{contact.subject}}</td>
+      <td>{{contact.message}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

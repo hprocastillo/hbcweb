@@ -1,0 +1,63 @@
+<form class="p-5 bg-white" (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+
+  <div class="row form-group">
+    <div class="col-md-12">
+      <label class="text-black" for="fullNameTXT">Nombres</label>
+      <input
+        type="text"
+        id="fullNameTXT"
+        class="form-control"
+        formControlName="fullName"
+      >
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-md-12">
+      <label class="text-black" for="emailTXT">Correo electrónico</label>
+      <input
+        type="email"
+        id="emailTXT"
+        class="form-control"
+        formControlName="email"
+      >
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-md-12">
+      <label class="text-black" for="subjectTXT">Asunto</label>
+      <input
+        type="text"
+        id="subjectTXT"
+        class="form-control"
+        formControlName="subject"
+      >
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-md-12">
+      <label class="text-black" for="messageTXT">Mensaje</label>
+      <textarea
+        id="messageTXT"
+        cols="30"
+        rows="7"
+        class="form-control"
+        formControlName="message"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-md-12">
+      <button
+        type="submit"
+        class="btn btn-primary py-2 px-4 text-white"
+      >
+        Enviar
+      </button>
+    </div>
+  </div>
+
+</form>

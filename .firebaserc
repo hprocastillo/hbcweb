@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "hbc-logistic": {
+      "hosting": {
+        "hbcWeb": [
+          "hbc-logistic"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "hbc-logistic"
+  }
+}

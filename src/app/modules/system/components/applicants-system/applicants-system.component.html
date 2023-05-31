@@ -1,0 +1,30 @@
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+    <tr class="text-nowrap">
+      <th scope="col">#</th>
+      <th scope="col">Fecha de envío</th>
+      <th scope="col">Representante legal</th>
+      <th scope="col">Nº RUC</th>
+      <th scope="col">Correo electrónico</th>
+      <th scope="col">Teléfono</th>
+      <th scope="col">Descripción de la empresa</th>
+      <th scope="col">Tipos de unidades de transporte</th>
+      <th scope="col">Nº de unidades de transporte</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="text-nowrap" *ngFor="let applicant of listApplicants; let i=index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{applicant.createdAt.toMillis() | date:'fullDate'}}</td>
+      <td>{{applicant.fullNameOwner}}</td>
+      <td>{{applicant.rucEnterprise}}</td>
+      <td>{{applicant.emailEnterprise}}</td>
+      <td>{{applicant.phoneEnterprise}}</td>
+      <td>{{applicant.descriptionEnterprise}}</td>
+      <td>{{applicant.typeCarrier}}</td>
+      <td>{{applicant.numberCarrier}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
