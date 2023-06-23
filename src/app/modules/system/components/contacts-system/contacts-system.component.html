@@ -1,24 +1,69 @@
-<div class="table-responsive">
-  <table class="table table-bordered">
-    <thead>
-    <tr class="text-nowrap">
-      <th scope="col">#</th>
-      <th scope="col">Fecha de envío</th>
-      <th scope="col">Nombres y Apellidos</th>
-      <th scope="col">Correo Electrónico</th>
-      <th scope="col">Asunto</th>
-      <th scope="col">Mensaje</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="text-nowrap" *ngFor="let contact of listContacts; let i=index">
-      <th scope="row">{{i + 1}}</th>
-      <td>{{contact.createdAt.toMillis() | date:'fullDate'}}</td>
-      <td>{{contact.fullName}}</td>
-      <td>{{contact.email}}</td>
-      <td>{{contact.subject}}</td>
-      <td>{{contact.message}}</td>
-    </tr>
-    </tbody>
-  </table>
+<!-- HEADER TITLE AND BUTTONS -->
+<div class="card shadow p-3 mb-3 bg-white rounded">
+  <div class="row">
+    <div class="col-lg-8">
+      <h4>Contactos desde la web</h4>
+    </div>
+    <div class="col-lg-4 text-right">
+      <!-- BUTTON BACK -->
+      <button
+        type="button"
+        class="btn btn-dark btn-sm"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Volver a Atrás"
+        (click)="getTemplate('homeTemplate')"
+      >
+        <i class="icon-arrow-left"></i>
+        Atrás
+      </button>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- BODY CONTENT -->
+<div class="row">
+  <div class="col-lg-12">
+
+    <div class="card shadow p-3 mb-3 bg-white rounded" *ngFor="let contact of listContacts">
+      <div class="row">
+        <div class="col-lg-4">
+          <ul class="list-group list-group-flush">
+            <!-- FULL NAME -->
+            <li class="list-group-item">
+              <p class="m-0 small text-primary">NOMBRES:</p>
+              <p class="m-0">{{contact.fullName}}</p>
+            </li>
+            <!-- EMAIL -->
+            <li class="list-group-item">
+              <p class="m-0 small text-primary">CORREO ELECTRÓNICO:</p>
+              <p class="m-0">{{contact.email}}</p>
+            </li>
+            <!-- CREATED AT -->
+            <li class="list-group-item">
+              <p class="m-0 small text-primary">ENVIADO:</p>
+              <p class="m-0">{{contact.createdAt.toMillis() | date:'fullDate'}}</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-8">
+          <ul class="list-group list-group-flush">
+            <!-- SUBJECT -->
+            <li class="list-group-item">
+              <p class="m-0 small text-primary">ASUNTO:</p>
+              <p class="m-0">{{contact.subject}}</p>
+            </li>
+            <!-- MESSAGE -->
+            <li class="list-group-item">
+              <p class="m-0 small text-primary">MENSAJE:</p>
+              <p class="m-0">{{contact.message}}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

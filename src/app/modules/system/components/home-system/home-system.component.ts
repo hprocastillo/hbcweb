@@ -12,7 +12,7 @@ export class HomeSystemComponent {
   constructor() {
   }
 
-  showTemplate(template: string) {
+  getTemplate(template: string) {
     this.template = template;
   }
 
